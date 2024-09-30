@@ -23,6 +23,7 @@ const getEmailsByFolderName = async (id, folderName, skip = 0, limit = 20) => {
     {
       $sort: {
         createdAt: -1,
+        _id: -1 
       },
     },
     {
@@ -64,7 +65,7 @@ const getEmailsByFolderId = async (userId, folderId, skip = 0, limit = 50) => {
         createdAt: 1,
       },
     },
-    { $sort: { createdAt: -1 } },
+    { $sort: { createdAt: -1, _id: -1  } },
     { $skip: skip },
     { $limit: limit },
   ]);

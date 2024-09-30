@@ -46,7 +46,7 @@ const getEmailsByFolderName = async (id, folderName, skip = 0, limit = 20) => {
 };
 
 /** Query with folderId and userId. it is faster because it involved only one table */
-const getEmailsByFolderId = async (userId, folderId, skip = 1, limit = 50) => {
+const getEmailsByFolderId = async (userId, folderId, skip = 0, limit = 50) => {
   const emails = await Email.aggregate([
     {
       $match: {
